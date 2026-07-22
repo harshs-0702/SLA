@@ -14,6 +14,8 @@ import NavlinkGallery from "./Pages/Navlink-gallery";
 import ProductDetails from "./Pages/ProductDetails";
 import Cart from "./Pages/Cart";
 import ScrollToTop from "./components/ScrollToTop";
+import CategoryPage from "./Pages/Category";
+import ProductPage from "./Pages/ProductPage";
 
 function App() {
   return (
@@ -57,6 +59,8 @@ function App() {
 
   <Route path="/product/:id" element={<ProductDetails />} />
   <Route path="/cart" element={<Cart />} />
+  <Route path="/category/:name" element={<CategoryPage />} />
+  <Route path="/product/:categoryName/:id" element={<ProductPage />} />
 
       </Routes>
 

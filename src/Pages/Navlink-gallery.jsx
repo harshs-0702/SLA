@@ -1,84 +1,11 @@
-// import { useEffect, useState } from "react";
-// import { Row, Col, Tag, Card } from "antd";
-// import { fetchProducts } from "../api/products";
-// import { useNavigate } from "react-router-dom";
 
-// const { Meta } = Card;
 
-// export default function NavlinkGallery() {
-//     const [data, setData] = useState([]);
-//     const navigate = useNavigate();
 
-//     useEffect(() => {
-//         fetchProducts().then((res) => setData(res));
-//     }, []);
-
-//     return (
-//         <section id="products" className="product-section">
-//             <div className="container">
-
-//                 <div className="section-title1 text-center">
-//                     <h2>Featured Creations</h2>
-//                     <p>Handcrafted marble idols & custom stone art</p>
-//                 </div>
-
-//                 <Row gutter={[20, 20]}>
-//                     {data.map((item) => (
-//                         <Col xs={24} sm={12} md={12} lg={8} xl={8} key={item.id}>
-
-//                             <Card
-//                                 hoverable
-//                                 className="custom-card"
-//                                 onClick={() => navigate(`/product/${item.id}`)}  // ✅ CLICK HERE
-//                                 cover={
-//                                     <img
-//                                         alt={item.name}
-//                                         src={item.img}
-//                                         className="card-img"
-//                                     />
-//                                 }
-//                             >
-//                                 {item.badge && (
-//                                     <Tag color="gold">{item.badge}</Tag>
-//                                 )}
-
-//                                 <Meta
-//                                     title={item.name}
-//                                     description={item.desc}
-//                                 />
-
-//                                 <div className="price">
-//                                     {item.price}
-//                                 </div>
-
-//                                 <button
-//                                     type="primary"
-//                                     block
-//                                     className="btn-enquire"
-//                                     onClick={(e) => {
-//                                         e.stopPropagation(); // ✅ prevent card click
-//                                         navigate(`/product/${item.id}`);
-//                                     }}
-//                                 >
-//                                     Enquire Now
-//                                 </button>
-
-//                             </Card>
-
-//                         </Col>
-//                     ))}
-//                 </Row>
-
-//             </div>
-//         </section>
-//     );
-// }
 
 import { useEffect, useState, useRef } from "react";
 import { Row, Col, Tag, Card } from "antd";
 import { fetchProducts } from "../api/products";
 import { useNavigate } from "react-router-dom";
-
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -90,12 +17,11 @@ const { Meta } = Card;
 export default function NavlinkGallery() {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
-  const sectionRef = useRef(null);
+  const sectionRef = useRef(null); // ✅ fixed: "sectionRefc" tha, ab "sectionRef" hai
 
   useEffect(() => {
     fetchProducts().then((res) => {
       setData(res);
-
       setTimeout(() => {
         ScrollTrigger.refresh();
       }, 100);
@@ -106,7 +32,6 @@ export default function NavlinkGallery() {
     () => {
       if (!data.length) return;
 
-      // Section Title Animation
       gsap.from(".section-title1", {
         y: 60,
         opacity: 0,
@@ -118,7 +43,6 @@ export default function NavlinkGallery() {
         },
       });
 
-      // Product Cards Animation
       gsap.from(sectionRef.current.querySelectorAll(".custom-card"), {
         y: 100,
         opacity: 0,
@@ -161,11 +85,8 @@ export default function NavlinkGallery() {
                 }
               >
                 {item.badge && <Tag color="gold">{item.badge}</Tag>}
-
                 <Meta title={item.name} description={item.desc} />
-
                 <div className="price">{item.price}</div>
-
                 <button
                   className="btn-enquire"
                   onClick={(e) => {
@@ -183,6 +104,7 @@ export default function NavlinkGallery() {
     </section>
   );
 }
+
 
 // import { useEffect, useState } from "react";
 // import { Row, Col, Tag, Card } from "antd";

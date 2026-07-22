@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+/* ---------- Loading ---------- */
+.pd-loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F6F3EE;
+}
+
+.pd-loading-text {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  color: #B98D3E;
+  letter-spacing: 0.05em;
+  animation: pulseFade 1.3s ease-in-out infinite;
+}
+
+@keyframes pulseFade {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* ---------- Page ---------- */
+.pd-page {
+  background: #F6F3EE;
+  background-image:
+    radial-gradient(circle at 15% 10%, rgba(185, 141, 62, 0.06), transparent 40%),
+    radial-gradient(circle at 85% 90%, rgba(139, 46, 46, 0.04), transparent 40%);
+  min-height: 100vh;
+  padding: 140px 60px 100px;
+  font-family: 'Work Sans', sans-serif;
+  color: #262421;
+}
+
+/* Breadcrumb */
+.pd-breadcrumb {
+  max-width: 1280px;
+  margin: 0 auto 48px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: #8a8478;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pd-breadcrumb span:not(.pd-crumb-sep):not(.pd-crumb-current) {
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+
+.pd-breadcrumb span:not(.pd-crumb-sep):not(.pd-crumb-current):hover {
+  color: #B98D3E;
+}
+
+.pd-crumb-sep {
+  opacity: 0.5;
+}
+
+.pd-crumb-current {
+  color: #262421;
+}
+
+/* Layout */
+.pd-layout {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* ---------- Image panel ---------- */
+.pd-image-panel {
+  position: relative;
+  animation: fadeSlideLeft 0.7s ease-out both;
+}
+
+.pd-catalog-tag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  background: rgba(246, 243, 238, 0.92);
+  border: 1px solid #E4DFD3;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: #B98D3E;
+  padding: 6px 12px;
+}
+
+.pd-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #F1EEE7;
+  border: 1px solid #E4DFD3;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.pd-image-wrap:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(38, 36, 33, 0.14);
+}
+
+.pd-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.pd-image-wrap:hover .pd-image {
+  transform: scale(1.06);
+}
+
+.pd-wishlist-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #262421;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.pd-wishlist-btn:hover {
+  transform: scale(1.08);
+}
+
+.pd-wishlist-btn.active {
+  color: #8B2E2E;
+}
+
+.pd-zoom-hint {
+  display: block;
+  text-align: center;
+  margin-top: 16px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: #a39d90;
+}
+
+/* ---------- Content panel ---------- */
+.pd-content {
+  padding-top: 8px;
+  animation: fadeSlideRight 0.7s ease-out both;
+}
+
+.pd-eyebrow {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #B98D3E;
+  margin-bottom: 16px;
+  animation: fadeSlideUp 0.6s ease-out 0.05s both;
+}
+
+.pd-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: clamp(32px, 3.6vw, 46px);
+  line-height: 1.1;
+  color: #201E1B;
+  margin: 0 0 16px;
+  animation: fadeSlideUp 0.6s ease-out 0.1s both;
+}
+
+.pd-price {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 500;
+  font-size: 24px;
+  color: #8B2E2E;
+  margin: 0 0 28px;
+  animation: fadeSlideUp 0.6s ease-out 0.15s both, priceGlow 2.8s ease-in-out 1s infinite;
+}
+
+
+.pd-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, #B98D3E, transparent 60%);
+  margin-bottom: 28px;
+  animation: fadeSlideUp 0.6s ease-out 0.18s both;
+}
+
+.pd-desc {
+  font-size: 16px;
+  line-height: 1.85;
+  color: #57524a;
+  margin: 0 0 36px;
+  max-width: 52ch;
+  animation: fadeSlideUp 0.6s ease-out 0.2s both;
+}
+
+/* Specs */
+.pd-specs {
+  border-top: 1px solid #E4DFD3;
+  border-bottom: 1px solid #E4DFD3;
+  padding: 20px 0;
+  margin-bottom: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  animation: fadeSlideUp 0.6s ease-out 0.25s both;
+}
+
+.pd-spec-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.pd-spec-label {
+  font-family: 'IBM Plex Mono', monospace;
+  color: #a39d90;
+  letter-spacing: 0.04em;
+}
+
+.pd-spec-value {
+  color: #262421;
+  font-weight: 500;
+}
+
+/* Quantity */
+.pd-qty-block {
+  margin-bottom: 36px;
+  animation: fadeSlideUp 0.6s ease-out 0.3s both;
+}
+
+.pd-qty-label {
+  display: block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8a8478;
+  margin-bottom: 10px;
+}
+
+.pd-qty {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #E4DFD3;
+  background: #FFFFFF;
+}
+
+.pd-qty-btn {
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  color: #262421;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.pd-qty-btn:hover {
+  background: #F1EEE7;
+}
+
+.pd-qty-btn:active {
+  transform: scale(0.9);
+}
+
+.pd-qty-btn-add {
+  color: #B98D3E;
+}
+
+.pd-qty-value {
+  display: inline-block;
+  min-width: 48px;
+  text-align: center;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Actions */
+.pd-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 44px;
+  animation: fadeSlideUp 0.6s ease-out 0.35s both;
+}
+
+.pd-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 15px 30px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.pd-btn:active {
+  transform: scale(0.97);
+}
+
+.pd-btn-primary {
+  background: #262421;
+  color: #F6F3EE;
+}
+
+.pd-btn-primary:hover {
+  background: #B98D3E;
+  transform: translateY(-2px);
+}
+
+.pd-btn-secondary {
+  background: transparent;
+  color: #262421;
+  border-color: #262421;
+}
+
+.pd-btn-secondary:hover {
+  border-color: #B98D3E;
+  color: #B98D3E;
+  transform: translateY(-2px);
+}
+
+.pd-btn:focus-visible {
+  outline: 2px solid #B98D3E;
+  outline-offset: 2px;
+}
+
+/* Craftsmanship note */
+.pd-note {
+  border-top: 1px solid #EDE9E0;
+  padding-top: 24px;
+}
+
+.pd-note-label {
+  display: block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8a8478;
+  margin-bottom: 10px;
+}
+
+.pd-note p {
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: #57524a;
+  margin: 0;
+  max-width: 46ch;
+}
+
+/* ---------- Animations ---------- */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeSlideRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes priceGlow {
+  0%, 100% { text-shadow: 0 0 0px rgba(185, 141, 62, 0); }
+  50% { text-shadow: 0 0 12px rgba(185, 141, 62, 0.3); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pd-image-panel,
+  .pd-content,
+  .pd-content > * {
+    animation: none !important;
+  }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 900px) {
+  .pd-page {
+    padding: 100px 20px 64px;
+  }
+  .pd-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

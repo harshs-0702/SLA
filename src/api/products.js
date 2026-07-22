@@ -39,7 +39,7 @@ const products = [
     name: "Buddha Statue",
     desc: "Decor Art • Smooth Finish",
     price: "₹12,000",
-    img: "/assets/images/img6.png"
+    img: "/assets/images/Ram_darbar.jpg"
   },
   {
     id: 7,
@@ -81,7 +81,7 @@ const products = [
     name: "Buddha Statue",
     desc: "Decor Art • Smooth Finish",
     price: "₹12,000",
-    img: "/assets/images/img6.png"
+    img: "/assets/images/Ram_darbar.jpg"
   },
   {
     id: 13,
@@ -92,7 +92,7 @@ const products = [
   },
   {
     id: 14,
-    name: "K  rishna Statue",
+    name: "Krishna Statue",
     desc: "White Marble • Custom Sizes",
     price: "₹20,000",
     img: "/assets/images/devi.png"
@@ -123,7 +123,7 @@ const products = [
     name: "Buddha Statue",
     desc: "Decor Art • Smooth Finish",
     price: "₹12,000",
-    img: "/assets/images/img6.png"
+    img: "/assets/images/Ram_darbar.jpg"
   }
 ];
 
