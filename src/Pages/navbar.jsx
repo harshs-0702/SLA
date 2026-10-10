@@ -226,9 +226,11 @@
 
 import { NavLink, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useState } from "react";
 
 export default function Navbar() {
   const cartItems = useSelector((state) => state.cart.cartItems);
+  const [galleryOpen, setGalleryOpen] = useState(false);
 
   const totalItems = cartItems.reduce((acc, item) => acc + item.qty, 0);
   return (
@@ -244,6 +246,8 @@ export default function Navbar() {
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navmenu"
+          aria-controls="navmenu"
+          aria-label="Toggle navigation"
           style={{ backgroundColor: "#e9dfdf" }}
         >
           <span className="navbar-toggler-icon"></span>
@@ -254,18 +258,40 @@ export default function Navbar() {
           id="navmenu"
         >
           <ul className="navbar-nav align-items-lg-center text-center">
-            <NavLink to="/">
-              <a className="nav-link" href="#">
-                Home
-              </a>
+            <NavLink to="/" className="nav-link">
+              Home
             </NavLink>
 
             <li className="nav-item dropdown-hover">
-              <NavLink to="/gallery" className="nav-link">
+              <NavLink
+                to="/gallery"
+                className="nav-link"
+                onClick={(event) => {
+                  if (window.matchMedia("(max-width: 991.98px)").matches) {
+                    event.preventDefault();
+                    setGalleryOpen((open) => !open);
+                  } else {
+                    setGalleryOpen(false);
+                  }
+                }}
+              >
                 Gallery
               </NavLink>
 
-              <div className="dropdown-menu custom-mega-menu shadow">
+              <div
+                id="gallery-categories"
+                className={`dropdown-menu custom-mega-menu shadow ${
+                  galleryOpen ? "is-open" : ""
+                }`}
+                onClick={() => setGalleryOpen(false)}
+              >
+                <Link
+                  className="mega-menu-gallery-link"
+                  to="/gallery"
+                  onClick={() => setGalleryOpen(false)}
+                >
+                  View full gallery
+                </Link>
                 <div className="dropdown-grid">
                   <div className="menu-column">
                     <h6>Marble Icons</h6>

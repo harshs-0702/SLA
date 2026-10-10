@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap');
-
 /* ---------- Loading ---------- */
 .pd-loading {
   min-height: 100vh;
@@ -10,7 +8,7 @@
 }
 
 .pd-loading-text {
-  font-family: 'Fraunces', serif;
+  font-family: inherit;
   font-size: 22px;
   color: #B98D3E;
   letter-spacing: 0.05em;
@@ -30,7 +28,7 @@
     radial-gradient(circle at 85% 90%, rgba(139, 46, 46, 0.04), transparent 40%);
   min-height: 100vh;
   padding: 140px 60px 100px;
-  font-family: 'Work Sans', sans-serif;
+  font-family: inherit;
   color: #262421;
 }
 
@@ -38,7 +36,7 @@
 .pd-breadcrumb {
   max-width: 1280px;
   margin: 0 auto 48px;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: inherit;
   font-size: 12px;
   letter-spacing: 0.04em;
   color: #8a8478;
@@ -87,7 +85,7 @@
   z-index: 2;
   background: rgba(246, 243, 238, 0.92);
   border: 1px solid #E4DFD3;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: inherit;
   font-size: 11px;
   letter-spacing: 0.08em;
   color: #B98D3E;
@@ -151,7 +149,7 @@
   display: block;
   text-align: center;
   margin-top: 16px;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: inherit;
   font-size: 11px;
   letter-spacing: 0.06em;
   color: #a39d90;
@@ -165,7 +163,7 @@
 
 .pd-eyebrow {
   display: inline-block;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: inherit;
   font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -175,7 +173,7 @@
 }
 
 .pd-title {
-  font-family: 'Fraunces', serif;
+  font-family: inherit;
   font-weight: 500;
   font-size: clamp(32px, 3.6vw, 46px);
   line-height: 1.1;
@@ -185,7 +183,7 @@
 }
 
 .pd-price {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: inherit;
   font-weight: 500;
   font-size: 24px;
   color: #8B2E2E;
@@ -230,7 +228,7 @@
 }
 
 .pd-spec-label {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: inherit;
   color: #a39d90;
   letter-spacing: 0.04em;
 }
@@ -248,7 +246,7 @@
 
 .pd-qty-label {
   display: block;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: inherit;
   font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -290,7 +288,7 @@
   display: inline-block;
   min-width: 48px;
   text-align: center;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: inherit;
   font-size: 16px;
   font-weight: 500;
 }
@@ -308,7 +306,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: 'Work Sans', sans-serif;
+  font-family: inherit;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.02em;
@@ -357,7 +355,7 @@
 
 .pd-note-label {
   display: block;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: inherit;
   font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;

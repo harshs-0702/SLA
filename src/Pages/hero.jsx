@@ -61,30 +61,6 @@ function Hero() {
           "-=1",
         );
 
-      // Floating Animation
-      gsap.to(".bg-img", {
-        y: -15,
-        duration: 3,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
-
-      gsap.to(".front-img", {
-        y: -30,
-        duration: 2.5,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
-
-      gsap.to(".slide-img img", {
-        y: -15,
-        duration: 3,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
     },
     { scope: heroRef },
   );
@@ -156,6 +132,4 @@ function Hero() {
 }
 
 export default Hero;
-
-
 

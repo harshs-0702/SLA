@@ -1850,7 +1850,7 @@ const STYLES = `
 
   background: var(--amc-bg);
   color: var(--amc-ink);
-  font-family: 'Plus Jakarta Sans', 'Manrope', sans-serif;
+  font-family: inherit;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
@@ -1909,7 +1909,7 @@ const STYLES = `
 .amc-eyebrow::after { background: linear-gradient(90deg, var(--amc-gold), transparent); }
 
 .amc-hero-title {
-  font-family: 'Manrope', sans-serif; font-weight: 800;
+  font-family: inherit; font-weight: 800;
   font-size: clamp(40px, 6.2vw, 76px); line-height: 1.04; letter-spacing: -0.03em;
   margin: 0 0 22px; color: var(--amc-ink); text-transform: capitalize;
 }
@@ -2038,11 +2038,11 @@ const STYLES = `
 .amc-rating { display: flex; align-items: center; gap: 3px; font-size: 11.5px; color: var(--amc-ink-soft); }
 .amc-rating svg { color: var(--amc-gold); }
 
-.amc-product-name { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 19px; letter-spacing: -0.015em; color: var(--amc-ink); margin: 0 0 6px; }
+.amc-product-name { font-family: inherit; font-weight: 800; font-size: 19px; letter-spacing: -0.015em; color: var(--amc-ink); margin: 0 0 6px; }
 .amc-product-desc { font-size: 13.5px; line-height: 1.55; color: var(--amc-ink-soft); margin: 0 0 18px; font-weight: 500; }
 
 .amc-card-bottom { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.amc-price { font-family: 'Manrope', sans-serif; font-size: 18px; font-weight: 800; color: var(--amc-ink); letter-spacing: -.01em; }
+.amc-price { font-family: inherit; font-size: 18px; font-weight: 800; color: var(--amc-ink); letter-spacing: -.01em; }
 .amc-price sup { font-size: 11px; font-weight: 700; color: var(--amc-ink-soft); margin-left: 2px; }
 
 .amc-piece-btn {
@@ -2072,7 +2072,7 @@ const STYLES = `
   display: flex; align-items: center; justify-content: center; margin-bottom: 24px; box-shadow: 0 12px 30px rgba(17,17,17,.06);
 }
 .amc-empty-icon svg { color: var(--amc-gold-deep); }
-.amc-empty-state h3 { font-family: 'Manrope', sans-serif; font-size: 21px; font-weight: 800; margin: 0 0 8px; }
+.amc-empty-state h3 { font-family: inherit; font-size: 21px; font-weight: 800; margin: 0 0 8px; }
 .amc-empty-state p { font-size: 14px; color: var(--amc-ink-soft); max-width: 340px; line-height: 1.6; margin: 0 0 22px; }
 .amc-empty-reset {
   padding: 11px 22px; border-radius: 999px; background: var(--amc-ink); color: #fff; border: none;
