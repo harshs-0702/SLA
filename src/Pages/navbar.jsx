@@ -227,6 +227,7 @@
 import { NavLink, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useState } from "react";
+import marbleLogo from "../assets/images/marbles-logo.png";
 
 export default function Navbar() {
   const cartItems = useSelector((state) => state.cart.cartItems);
@@ -237,7 +238,7 @@ export default function Navbar() {
     <nav className="navbar navbar-expand-lg custom-navbar fixed-top navbar-light">
       <div className="container">
         <NavLink className="navbar-brand logo-box" to="/">
-          <img src="/public/assets/images/marbles-logo.png" alt="SLA Logo" />
+          <img src={marbleLogo} alt="SLA Logo" />
         </NavLink>
         
 
