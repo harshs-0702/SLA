@@ -2,7 +2,6 @@
   "name": "marvales.statue",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "server": "npm --prefix backend run dev",
