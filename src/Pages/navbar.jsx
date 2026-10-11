@@ -237,7 +237,7 @@ export default function Navbar() {
     <nav className="navbar navbar-expand-lg custom-navbar fixed-top navbar-light">
       <div className="container">
         <NavLink className="navbar-brand logo-box" to="/">
-          <img src="\public\assets\images\marbles-logo.png" alt="SLA Logo" />
+          <img src="/public/assets/images/marbles-logo.png" alt="SLA Logo" />
         </NavLink>
         
 
