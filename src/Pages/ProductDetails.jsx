@@ -216,7 +216,7 @@ import {
   HeartOutlined,
   HeartFilled,
 } from "@ant-design/icons";
-import "../styles/ProductDetails.css";
+import "../Styles/ProductDetails.css";
 
 export default function ProductDetails() {
   const { id } = useParams();

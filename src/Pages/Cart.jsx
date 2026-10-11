@@ -1126,7 +1126,7 @@
 
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import "../styles/Cart.css";
+import "../Styles/Cart.css";
 
 import { addToCart, removeFromCart, clearCart } from "../redux/cartSlice";
 

@@ -113,7 +113,7 @@ import { useEffect, useState } from "react";
 import { fetchCategoryProducts } from "../api/category";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart } from "../redux/cartSlice";
-import "../styles/ProductDetails.css";
+import "../Styles/ProductDetails.css";
 
 export default function ProductPage() {
   const { id } = useParams();
