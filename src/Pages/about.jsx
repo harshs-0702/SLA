@@ -83,16 +83,23 @@ function About() {
       counters.forEach((counter) => {
         const target = +counter.dataset.target;
 
-        gsap.to(counter, {
-          innerText: target,
-          duration: 2,
-          ease: "power1.out",
-          snap: { innerText: 1 },
-          scrollTrigger: {
-            trigger: counter,
-            start: "top 90%",
+        gsap.fromTo(
+          counter,
+          { innerText: 0 },
+          {
+            innerText: target,
+            duration: 2,
+            ease: "power1.out",
+            snap: { innerText: 1 },
+            onStart: () => counter.classList.remove("is-counted"),
+            onComplete: () => counter.classList.add("is-counted"),
+            scrollTrigger: {
+              trigger: counter,
+              start: "top 90%",
+              toggleActions: "restart none restart none",
+            },
           },
-        });
+        );
       });
 
       // Parallax Image
@@ -160,21 +167,21 @@ function About() {
             <div className="about-stats">
               <div>
                 <h3 className="counter" data-target="25">
-                  0
+                  0+
                 </h3>
                 <span>Years Experience</span>
               </div>
 
               <div>
                 <h3 className="counter" data-target="500">
-                  0
+                  0+
                 </h3>
                 <span>Projects Completed</span>
               </div>
 
               <div>
                 <h3 className="counter" data-target="100">
-                  0
+                  0+
                 </h3>
                 <span>Client Satisfaction</span>
               </div>

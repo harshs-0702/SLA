@@ -224,7 +224,7 @@
 
 
 
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import marbleLogo from "../assets/images/marbles-logo.png";
@@ -232,6 +232,13 @@ import marbleLogo from "../assets/images/marbles-logo.png";
 export default function Navbar() {
   const cartItems = useSelector((state) => state.cart.cartItems);
   const [galleryOpen, setGalleryOpen] = useState(false);
+  const location = useLocation();
+  const [mobileMenu, setMobileMenu] = useState({
+    locationKey: location.key,
+    open: false,
+  });
+  const mobileOpen =
+    mobileMenu.locationKey === location.key && mobileMenu.open;
 
   const totalItems = cartItems.reduce((acc, item) => acc + item.qty, 0);
   return (
@@ -245,17 +252,21 @@ export default function Navbar() {
         <button
           className="navbar-toggler"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navmenu"
           aria-controls="navmenu"
+          aria-expanded={mobileOpen}
           aria-label="Toggle navigation"
+          onClick={() =>
+            setMobileMenu({ locationKey: location.key, open: !mobileOpen })
+          }
           style={{ backgroundColor: "#e9dfdf" }}
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
         <div
-          className="collapse navbar-collapse justify-content-end"
+          className={`collapse navbar-collapse justify-content-end ${
+            mobileOpen ? "show" : ""
+          }`}
           id="navmenu"
         >
           <ul className="navbar-nav align-items-lg-center text-center">
